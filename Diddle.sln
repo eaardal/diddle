@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diddle.ConsoleClient", "Diddle.ConsoleClient\Diddle.ConsoleClient.csproj", "{725FC106-F6A8-4291-917A-68C7F17C63BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diddle.Core", "Diddle.Core\Diddle.Core.csproj", "{2201DE17-DBAD-4AAA-9EA0-E3793B68D420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diddle.WpfClient", "Diddle.WpfClient\Diddle.WpfClient.csproj", "{30D870FF-1601-4659-B2EF-02F920A1D574}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{725FC106-F6A8-4291-917A-68C7F17C63BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725FC106-F6A8-4291-917A-68C7F17C63BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725FC106-F6A8-4291-917A-68C7F17C63BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725FC106-F6A8-4291-917A-68C7F17C63BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2201DE17-DBAD-4AAA-9EA0-E3793B68D420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2201DE17-DBAD-4AAA-9EA0-E3793B68D420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2201DE17-DBAD-4AAA-9EA0-E3793B68D420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2201DE17-DBAD-4AAA-9EA0-E3793B68D420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D870FF-1601-4659-B2EF-02F920A1D574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D870FF-1601-4659-B2EF-02F920A1D574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D870FF-1601-4659-B2EF-02F920A1D574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D870FF-1601-4659-B2EF-02F920A1D574}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
