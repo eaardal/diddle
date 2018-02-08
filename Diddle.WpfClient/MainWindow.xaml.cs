@@ -23,14 +23,12 @@ namespace Diddle.WpfClient
             if (status)
             {
                 BrdrStatus.Background = new SolidColorBrush(Colors.DarkSeaGreen);
-                BrdrStatus.BorderBrush = new SolidColorBrush(Colors.DarkGreen);
                 TxtStatus.Text = "On";
                 Title = "Diddle: On";
             }
             else
             {
                 BrdrStatus.Background = new SolidColorBrush(Colors.DarkGray);
-                BrdrStatus.BorderBrush = new SolidColorBrush(Colors.DimGray);
                 TxtStatus.Text = "Off";
                 Title = "Diddle: Off";
             }
@@ -45,7 +43,7 @@ namespace Diddle.WpfClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{exception.Message}\n{exception.StackTrace}", "An error occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxWithError(exception);
             }
         }
 
@@ -58,18 +56,73 @@ namespace Diddle.WpfClient
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{exception.Message}\n{exception.StackTrace}", "An error occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxWithError(exception);
             }
         }
 
         private void OnOpenDirectoryClicked(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer", Path.GetDirectoryName(FiddlerIISProxy.IISRootWebConfig));
+            if (WwwrootDirectoryExists())
+            {
+                OpenWwwrootDirectory();
+            }
+            else
+            {
+                ShowMessageBoxForMissingWwwrootDirectory();    
+            }
         }
 
         private void OnOpenFileClicked(object sender, RoutedEventArgs e)
         {
+            if (WebConfigFileExists())
+            {
+                OpenWebConfigFile();
+            }
+            else
+            {
+                ShowMessageBoxForMissingWebConfig();
+            }   
+        }
+
+        private static void OpenWebConfigFile()
+        {
             Process.Start(FiddlerIISProxy.IISRootWebConfig);
+        }
+
+        private static void OpenWwwrootDirectory()
+        {
+            Process.Start("explorer", Path.GetDirectoryName(FiddlerIISProxy.IISRootWebConfig));
+        }
+
+        private static bool WebConfigFileExists()
+        {
+            return File.Exists(FiddlerIISProxy.IISRootWebConfig);
+        }
+
+        private static bool WwwrootDirectoryExists()
+        {
+            return Directory.Exists(Path.GetDirectoryName(FiddlerIISProxy.IISRootWebConfig));
+        }
+
+        private static void ShowMessageBoxForMissingWwwrootDirectory()
+        {
+            MessageBox.Show(
+                $"The directory \"{Path.GetDirectoryName(FiddlerIISProxy.IISRootWebConfig)}\" does not exist. Is IIS enabled on your machine?",
+                "Directory not found", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private static void ShowMessageBoxForMissingWebConfig()
+        {
+            MessageBox.Show(
+                $"The file \"{FiddlerIISProxy.IISRootWebConfig}\" does not exist. Enable Diddler to create this file automatically, then try to open it again.",
+                "File not found", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private static void ShowMessageBoxWithError(Exception exception)
+        {
+            MessageBox.Show(
+                $"An error occurred. Are you running the app as Administrator?\n\n{exception.Message}\n{exception.StackTrace}",
+                "An error occurred", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
