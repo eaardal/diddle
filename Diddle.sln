@@ -6,6 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diddle.Core", "Diddle.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diddle.WpfClient", "Diddle.WpfClient\Diddle.WpfClient.csproj", "{30D870FF-1601-4659-B2EF-02F920A1D574}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{479E54D8-A3A8-4833-8686-791F5952D539}"
+ProjectSection(SolutionItems) = preProject
+	PackRelease.ps1 = PackRelease.ps1
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
