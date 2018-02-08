@@ -51,9 +51,16 @@ off       Turn off Diddle (Disables the proxy)
 status    Get the current status (is proxy on/off)
 ```
 
+Examples
+```
+diddle on
+diddle off
+diddle status
+```
+
 # Using the WPF app
 
-![wpf app](./wpfapp.png)
+![wpf app](./wpfapp.png)  
 _GUI client for turning the proxy on/off_
 
 1. Click buttons
