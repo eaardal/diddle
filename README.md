@@ -1,10 +1,10 @@
-## What?
+## :confused: What?
 
 Diddle enables an IIS-wide proxy which is set to target Fiddler's defaults (`127.0.0.1:8888`).
 
 When Diddle is enabled, all taffic made by websites in your local IIS is routed through Fiddler, including _server-to-server_ and _SOAP_ calls. This is helpful for debugging and tracing during development.
 
-## How?
+## :dizzy_face: How?
 
 When you **enable** Diddle, it creates the file `C:\inetpub\wwwroot\Web.config` with this content:
 
@@ -22,12 +22,14 @@ When you **enable** Diddle, it creates the file `C:\inetpub\wwwroot\Web.config` 
 
 </configuration>
 ```
+(Thanks to [Eric Lawrence](https://www.telerik.com/blogs/author/eric-lawrence) for writing [this article](https://www.telerik.com/blogs/capturing-traffic-from-.net-services-with-fiddler) explaining the trick and the code).
 
 When you **disable** Diddle, it **deletes** the file.
 
 :exclamation: If you have this Web.config file already configured on your machine with configuration you need, you should **NOT** use this app for now. It will delete and re-create the Web.config file every time you enable and disable Diddle.
 
-## Remember
+## :sweat_smile: Remember
 
-- As long as the Web.config file has proxy enabled, you must have Fiddler opened for any traffic to pass through the proxy
-- If you encounter issues with HTTPS decryption, you can skip decryption in Fiddler under `Tools -> Options -> HTTPS` and then click the link above the last textbox so it says "Skip decryption for the following hosts" and enter the hosts it should skip
+- :exclamation: You must run the app (or terminal, if using the ConsoleClient) as **Administrator**
+- :vertical_traffic_light: As long as the Web.config file has proxy enabled, you must have Fiddler opened for any traffic to pass through the proxy
+- :persevere: If you encounter issues with HTTPS decryption, you can skip decryption in Fiddler under `Tools -> Options -> HTTPS` and then click the link above the last textbox so it says "Skip decryption for the following hosts" and enter the hosts it should skip
