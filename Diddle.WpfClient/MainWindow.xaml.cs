@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
@@ -37,14 +38,28 @@ namespace Diddle.WpfClient
 
         private void OnEnableClicked(object sender, RoutedEventArgs e)
         {
-            FiddlerIISProxy.On();
-            DrawStatus();
+            try
+            {
+                FiddlerIISProxy.On();
+                DrawStatus();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{exception.Message}\n{exception.StackTrace}", "An error occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OnDisableClicked(object sender, RoutedEventArgs e)
         {
-            FiddlerIISProxy.Off();
-            DrawStatus();
+            try
+            {
+                FiddlerIISProxy.Off();
+                DrawStatus();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{exception.Message}\n{exception.StackTrace}", "An error occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OnOpenDirectoryClicked(object sender, RoutedEventArgs e)
