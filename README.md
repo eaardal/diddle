@@ -12,14 +12,14 @@ _Fiddler capturing WCF SOAP request/responses from server-to-server calls_
 When you **enable** Diddle, it creates the file `C:\inetpub\wwwroot\Web.config` with this content:
 
 ```xml
-<?xml version=""1.0"" encoding=""UTF-8""?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <configuration>
    
     <!-- The following section is to force use of Fiddler for all applications, including those running in service accounts -->
     <system.net>
-      <defaultProxy enabled=""true"" useDefaultCredentials=""true"">
-        <proxy bypassonlocal=""False"" proxyaddress=""http://127.0.0.1:8888"" usesystemdefault=""False""/>
+      <defaultProxy enabled="true" useDefaultCredentials="true">
+        <proxy bypassonlocal="False" proxyaddress="http://127.0.0.1:8888" usesystemdefault="False"/>
       </defaultProxy>
     </system.net>
 
@@ -30,6 +30,10 @@ When you **enable** Diddle, it creates the file `C:\inetpub\wwwroot\Web.config` 
 When you **disable** Diddle, it **deletes** the file.
 
 :exclamation: If you have this Web.config file already configured on your machine with configuration you need, you should **NOT** use this app for now. It will delete and re-create the Web.config file every time you enable and disable Diddle.
+
+### For an individual web application
+
+If you just want to route traffic for a specific web site or application in IIS, move the configuration above to your application's Web.config file instead (but this app can't do it for you).
 
 ## :sweat_smile: Remember
 
