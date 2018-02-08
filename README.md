@@ -5,7 +5,8 @@ Diddle enables an IIS-wide proxy which is set to target Fiddler's defaults (`127
 When Diddle is enabled, all taffic made by websites in your local IIS is routed through Fiddler, including _server-to-server_ and _SOAP_ calls. This is helpful for debugging and tracing during development.
 
 ![SOAP traffic in Fiddler](diddle.png)
-
+_Fiddler capturing WCF SOAP request/responses from server-to-server calls_
+ 
 ## :dizzy_face: How?
 
 When you **enable** Diddle, it creates the file `C:\inetpub\wwwroot\Web.config` with this content:
