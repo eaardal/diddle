@@ -30,6 +30,6 @@ When you **disable** Diddle, it **deletes** the file.
 
 ## :sweat_smile: Remember
 
-- :exclamation: You must run the app (or terminal, if using the ConsoleClient) as **Administrator**
+- :exclamation: You must run the app (or terminal, if using the ConsoleClient) as **Administrator**. Or allow your user or the _Everyone_ group to read+write the Web.config file. 
 - :vertical_traffic_light: As long as the Web.config file has proxy enabled, you must have Fiddler opened for any traffic to pass through the proxy
 - :persevere: If you encounter issues with HTTPS decryption, you can skip decryption in Fiddler under `Tools -> Options -> HTTPS` and then click the link above the last textbox so it says "Skip decryption for the following hosts" and enter the hosts it should skip
