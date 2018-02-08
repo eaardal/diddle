@@ -40,3 +40,21 @@ If you just want to route traffic for a specific web site or application in IIS,
 - :exclamation: You must run the app (or terminal, if using the ConsoleClient) as **Administrator**. Or allow your user or the _Everyone_ group to read+write the Web.config file. 
 - :vertical_traffic_light: As long as the Web.config file has proxy enabled, you must have Fiddler opened for any traffic to pass through the proxy
 - :persevere: If you encounter issues with HTTPS decryption, you can skip decryption in Fiddler under `Tools -> Options -> HTTPS` and then click the link above the last textbox so it says "Skip decryption for the following hosts" and enter the hosts it should skip
+
+# Using the Console app
+
+1. Put the directory containing `diddle.exe` on your `PATH`
+2. Accepts 3 commands:
+```
+on        Turn on Diddle (Enables the proxy)
+off       Turn off Diddle (Disables the proxy)
+status    Get the current status (is proxy on/off)
+```
+
+# Using the WPF app
+
+![wpf app](./wpfapp.png)
+_GUI client for turning the proxy on/off_
+
+1. Click buttons
+
