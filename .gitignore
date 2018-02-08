@@ -224,4 +224,5 @@ _Pvt_Extensions
 #Rider
 *.iml
 .idea
-Betaling.Api/Betaling.Domain.Tests.Unit/Services/AccountServiceTest.cs
+
+Releases/
